@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Posts from './components/Posts'
-
+import Posts from './components/Posts';
+import Postform from './components/Postform';
 import logo from './logo.svg';
 import './App.css';
 
@@ -12,6 +12,8 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
+        <Postform/>
+        <hr/>
         <Posts/>
       </div>
     );

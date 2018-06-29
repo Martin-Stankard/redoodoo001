@@ -4,21 +4,21 @@ class Posts extends Component {
 
     constructor(props){
         super(props);
-        console.log('0constructor');
+        console.log('0.Posts.constructor');
         this.state = {
             posts: []
         }
     }
 
 componentWillMount(){
-    console.log('1componentWillMount');
+    console.log('1.Posts.componentWillMount');
     fetch('https://jsonplaceholder.typicode.com/posts')
     .then(response => response.json())
     .then(json => this.setState({posts:json}));
 }
   
    render() {
-       console.log("2render");
+       console.log("2.Posts.render");
        const postItems = this.state.posts.map(post =>(
         <div key={post.id}>
             <h3>{post.title}</h3>
@@ -34,27 +34,27 @@ componentWillMount(){
   }
   
 componentDidCatch(){
-    console.log('3componentDidCatch');
+    console.log('3.Posts.componentDidCatch');
 }
 
 componentDidMount(){
-    console.log('4componentDidMount');
+    console.log('4.Posts.componentDidMount');
 }
     
 componentDidUpdate(){
-    console.log('8componentDidUpdate');
+    console.log('8.Posts.componentDidUpdate');
 }
 
 componentWillReceiveProps(){
-    console.log('6componentWillReceiveProps');
+    console.log('6.Posts.componentWillReceiveProps');
 }
 
 componentWillUnmount(){
-    console.log('7componentWillUnmount');
+    console.log('7.Posts.componentWillUnmount');
 }
 
 componentWillUpdate(){
-    console.log('5componentWillUpdate');
+    console.log('5.Posts.componentWillUpdate');
 }
 
 
