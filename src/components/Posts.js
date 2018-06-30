@@ -46,8 +46,11 @@ componentDidUpdate(){
     console.log('8.Posts.componentDidUpdate');
 }
 
-componentWillReceiveProps(){
+componentWillReceiveProps(nextProps){    
     console.log('6.Posts.componentWillReceiveProps');
+    if(nextProps.newPost){
+        this.props.posts.unshift(nextProps.newPost);
+    }
 }
 
 componentWillUnmount(){
@@ -63,11 +66,13 @@ componentWillUpdate(){
 
 Posts.propTypes = {
     fetchPosts:PropTypes.func.isRequired,
-    posts: PropTypes.array.isRequired 
+    posts: PropTypes.array.isRequired,
+    newPost: PropTypes.object 
 }
 
 const mapStateToProps = state => ({
-    posts:state.posts.items
+    posts:state.posts.items,
+    newPost: state.posts.item
 });
 
 export default connect(mapStateToProps, {fetchPosts})(Posts);
