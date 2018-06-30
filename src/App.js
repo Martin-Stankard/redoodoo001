@@ -16,6 +16,7 @@ class App extends Component {
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">An extremely verbose Redux implementation</h1>
+            <h1 className="App-title">Based on <a href="https://youtu.be/93p3LxR9xfM">this video</a> by <a href = "https://github.com/bradtraversy">Brad Traversy</a></h1>
           </header>
           <Postform/>
           <hr/>
